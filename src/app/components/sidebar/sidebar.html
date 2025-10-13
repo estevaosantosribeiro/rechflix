@@ -1,12 +1,13 @@
 <nav>
   <div class="indicator" [style.top.%]="selectedIndex * 33.5"></div>
 
-  <a
-    *ngFor="let tab of tabs; let i = index"
-    (click)="selectTab(tab, i)"
-    [class.selected]="selectedTab === tab"
-    href="#"
-  >
+  @for (tab of tabs; track $index) {
+    <a
+      (click)="selectTab(tab, $index)"
+      [class.selected]="selectedTab === tab"
+      href="#"
+    >
     {{ tab }}
   </a>
+  }
 </nav>
