@@ -12,11 +12,4 @@ import { Sidebar } from "./components/sidebar/sidebar";
 })
 export class App {
   protected readonly title = signal('rechflix');
-  selectedTab: string = 'Explorar';
-
-  tabs = ['Explorar', 'Favoritos', 'Configurações'];
-
-  selectTab(tab: string) {
-    this.selectedTab = tab;
-  }
 }
