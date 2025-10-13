@@ -1,0 +1,42 @@
+nav {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  border: 1px solid #444;
+  border-radius: 10px;
+  overflow: hidden; /* evita overflow durante animação */
+
+  a {
+    text-decoration: none;
+    color: white;
+    padding: 20px 45px;
+    font-size: 16px;
+    border-bottom: 1px solid #444;
+    transition: background-color 0.3s, transform 0.25s ease, box-shadow 0.25s;
+    position: relative;
+
+    &:not(.selected):hover {
+      background-color: #333;
+    }
+  }
+
+  .selected {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    font-weight: bold;
+    transform: translateY(3px); /* movimento para baixo */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .selected::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    background: white;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+}
