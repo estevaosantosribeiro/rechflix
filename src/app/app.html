@@ -3,23 +3,5 @@
 <div style="display: flex; height: calc(100vh - 60px)">
   <app-sidebar style="width: 20%; min-width: 100px"></app-sidebar>
 
-  <div class="list">
-    <h2 class="title">Populares</h2>
-
-    <div class="grid">
-      @for (midia of (midias | async)?.results; track midia.id) {
-        <div class="midia">
-          <img
-            class="image"
-            [src]="midia.poster_path"
-            [alt]="midia.title ?? midia.name"
-          />
-          <div class="info">
-            <p>{{ formatarTitulo(midia.title ?? midia.name) }}</p>
-            <small>{{ midia.release_date ?? midia.first_air_date }}</small>
-          </div>
-        </div>
-      }
-    </div>
-  </div>
+  <app-list></app-list>
 </div>

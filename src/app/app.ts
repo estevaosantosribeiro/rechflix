@@ -1,20 +1,13 @@
-import { Component, inject } from '@angular/core';
-import { Header } from "./components/header/header";
+import { Component } from '@angular/core';
+import { Header } from './components/header/header';
 import { CommonModule } from '@angular/common';
-import { Sidebar } from "./components/sidebar/sidebar";
-import { TmdbService } from './services/tmdb-service';
-import { formatarTitulo } from './utils/formatter';
+import { Sidebar } from './components/sidebar/sidebar';
+import { List } from "./components/list/list";
 
 @Component({
   selector: 'app-root',
-  imports: [Header, CommonModule, Sidebar],
+  imports: [Header, CommonModule, Sidebar, List],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
-export class App {
-  protected readonly tmdbService = inject(TmdbService);
-
-  protected readonly midias = this.tmdbService.selecionarFilmes();
-
-  formatarTitulo = formatarTitulo
-}
+export class App {}
