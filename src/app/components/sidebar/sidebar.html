@@ -1,0 +1,13 @@
+<nav>
+  <div class="indicator" [style.top.%]="selectedIndex * 33.5"></div>
+
+  @for (tab of tabs; track $index) {
+    <a
+      (click)="selectTab(tab, $index)"
+      [class.selected]="selectedTab === tab"
+      href="#"
+    >
+    {{ tab }}
+  </a>
+  }
+</nav>
