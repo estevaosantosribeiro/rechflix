@@ -1,0 +1,137 @@
+.detalhes {
+  color: #fff;
+  background-color: #111;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+
+  &__banner {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  &__overlay {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+  }
+
+  &__info {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .poster {
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  }
+
+  .conteudo {
+    max-width: 700px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .meta {
+    color: #ccc;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .nota {
+    color: #ffd700;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  .descricao {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .botoes {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    button {
+      background: #fff;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      padding: 0.5rem 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+
+      &.assistir {
+        background: #e50914;
+        color: #fff;
+      }
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+
+  .thumbs {
+    display: flex;
+    gap: 1rem;
+
+    img {
+      width: 150px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__elenco {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    padding: 2rem;
+    background: #1a1a1a;
+
+    .coluna {
+      width: 250px;
+
+      h2 {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+    }
+
+    .pessoa {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+
+      img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .nome {
+        font-weight: bold;
+      }
+
+      .personagem {
+        color: #aaa;
+        font-size: 0.85rem;
+      }
+    }
+  }
+}

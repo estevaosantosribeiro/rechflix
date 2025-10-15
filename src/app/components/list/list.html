@@ -3,7 +3,7 @@
 
     <div class="grid">
       @for (midia of (midias | async)?.results; track midia.id) {
-        <div class="midia">
+        <a class="midia" [routerLink]='["/detalhes", midia.id]'>
           <img
             class="image"
             [src]="midia.poster_path"
@@ -14,7 +14,7 @@
             <small>Lançamento: {{ formatarData(midia.release_date ?? midia.first_air_date) }}</small>
             <span>⭐ {{ midia.vote_average | number:'1.1-1' }}</span>
           </div>
-        </div>
+        </a>
       }
     </div>
   </div>

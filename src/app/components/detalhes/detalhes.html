@@ -1,0 +1,68 @@
+@let midia = (detalhes | async);
+
+<app-header></app-header>
+
+@if (midia) {
+  <section class="detalhes">
+    <div class="detalhes__banner" [style.background-image]="'url(https://image.tmdb.org/t/p/original' + midia.backdrop_path + ')'">
+      <div class="detalhes__overlay">
+        <div class="detalhes__info">
+          <img class="poster" [src]="'https://image.tmdb.org/t/p/w500' + midia.poster_path" alt="Poster do filme">
+
+          <div class="conteudo">
+            <h1>{{ midia.title || midia.name }}</h1>
+            <p class="meta">
+              {{ formatarData(midia.release_date || midia.first_air_date) }} · 1h35m
+            </p>
+
+            <p class="nota">
+              ⭐ {{ (midia.vote_average * 10) | number:'1.0-0' }}% ({{ midia.vote_count }} votos)
+            </p>
+
+            <p class="descricao">{{ midia.overview }}</p>
+
+            <div class="botoes">
+              <button class="assistir">▶ Assistir</button>
+              <button class="favorito">♡</button>
+            </div>
+
+            <div class="thumbs">
+              <img src="https://image.tmdb.org/t/p/w300{{ midia.backdrop_path }}" alt="Cena 1">
+              <img src="https://image.tmdb.org/t/p/w300{{ midia.poster_path }}" alt="Cena 2">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="detalhes__elenco">
+      <div class="coluna">
+        <h2>Elenco</h2>
+        @for (ator of midia.cast ?? []; track ator.id) {
+          <div class="pessoa">
+            <img [src]="'https://image.tmdb.org/t/p/w185' + ator.profile_path" alt="{{ ator.name }}">
+            <div>
+              <p class="nome">{{ ator.name }}</p>
+              <p class="personagem">{{ ator.character }}</p>
+            </div>
+          </div>
+        }
+      </div>
+
+      <div class="coluna">
+        <h2>Equipe técnica</h2>
+        @for (tecnico of midia.crew ?? []; track tecnico.id) {
+          <div class="pessoa">
+            <img [src]="'https://image.tmdb.org/t/p/w185' + tecnico.profile_path" alt="{{ tecnico.name }}">
+            <div>
+              <p class="nome">{{ tecnico.name }}</p>
+              <p class="personagem">{{ tecnico.job }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div> -->
+  </section>
+} @else {
+  <p style="text-align:center; color: white; padding: 2rem;">Carregando detalhes...</p>
+}
